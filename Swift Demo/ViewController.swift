@@ -1,25 +1,53 @@
-//
-//  ViewController.swift
-//  Swift Demo
-//
-//  Created by tse on 2017/11/16.
-//  Copyright © 2017年 tse. All rights reserved.
-//
 
+
+
+//1
 import UIKit
 
-class ViewController: UIViewController {
 
+
+
+
+class ViewController: UIViewController {
+//2
+    @IBOutlet weak var tse: UIButton!
+
+    var count = 1  // 創造一個 整數  數字
+
+    
+    override func loadView() {
+        super.loadView()
+        
+
+        print("tse ViewController loadView")
+        //3
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        tse.setTitle("tse button viewDidLoad", for: UIControlState.normal)
+        print("tse ViewController viewDidLoad")
     }
+    
+    @IBAction func change(_ sender: Any) {
+        
+        print("change")
+//        tse.setTitle("tse button change", for: UIControlState.normal)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        var str1 = "cat"  //字符串
+        
+        tse.setTitle("Button Title:"+String(format:"%03d",count),for: .normal);
+        count=count+11
+        
+//        tse.setTitle("Button Title"+String(format:"%02d",count),for: .normal);
+//        count=count+1;
+//        tse.setTitle("tse button change", for: UIControlState.normal)
+
     }
-
+    
+    
 
 }
 
